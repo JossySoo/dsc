@@ -1,0 +1,288 @@
+
+{
+  "identificador": "lab1-infofactoring-mayorista",
+  "metadatos": {
+    "fecha": "2026-11-19",
+    "fuente": "sintetico",
+    "descripcion": "Base de conocimiento sobre factoring mayorista: conceptos, modalidades, proceso operativo, gestión del riesgo, límites, condiciones financieras y ejemplos de cálculo.",
+    "version": "1.0",
+    "ambito": "Banca de empresas y mayorista",
+    "moneda": "EUR",
+    "tipo_documento": "Documento de referencia"
+  },
+  "tablas": [
+    [
+      {
+        "Campo": "Producto financiero",
+        "Información": "Factoring mayorista"
+      },
+      {
+        "Campo": "Definición",
+        "Información": "Operación mediante la cual una empresa cede sus derechos de cobro comerciales a una entidad financiera, que puede anticipar fondos y gestionar el cobro."
+      },
+      {
+        "Campo": "Segmento",
+        "Información": "Empresas y clientes corporativos."
+      },
+      {
+        "Campo": "Cedente",
+        "Información": "Empresa que vende bienes o presta servicios y cede las facturas."
+      },
+      {
+        "Campo": "Deudor cedido",
+        "Información": "Empresa compradora obligada a pagar las facturas a su vencimiento."
+      },
+      {
+        "Campo": "Factor",
+        "Información": "Entidad financiera que adquiere los derechos de cobro y puede anticipar financiación."
+      },
+      {
+        "Campo": "Servicios",
+        "Información": "Financiación anticipada, gestión de cobros, administración de cuentas a cobrar y cobertura de insolvencia según contrato."
+      },
+      {
+        "Campo": "Diferencia frente a confirming",
+        "Información": "El factoring parte de los derechos de cobro del vendedor, mientras que el confirming parte de la gestión de pagos del comprador."
+      }
+    ],
+    [
+      {
+        "Modalidad": "Factoring con recurso",
+        "Características": "El cedente responde ante el factor por el impago en los supuestos establecidos contractualmente.",
+        "Riesgo principal": "Riesgo de crédito del cedente y del deudor según la estructura.",
+        "Consideración": "Evaluar la solvencia del cedente y sus obligaciones de recompra."
+      },
+      {
+        "Modalidad": "Factoring sin recurso",
+        "Características": "El factor asume el riesgo de insolvencia del deudor dentro de las condiciones de cobertura.",
+        "Riesgo principal": "Riesgo de crédito del deudor.",
+        "Consideración": "No implica cobertura automática de disputas comerciales, duplicidades ni facturas inválidas."
+      },
+      {
+        "Modalidad": "Factoring notificado",
+        "Características": "El deudor recibe comunicación de la cesión de los derechos de cobro.",
+        "Riesgo principal": "Riesgo operativo y de ejecución del pago.",
+        "Consideración": "Verificar notificación y cuenta de cobro."
+      },
+      {
+        "Modalidad": "Factoring no notificado",
+        "Características": "La cesión no se comunica inicialmente al deudor.",
+        "Riesgo principal": "Riesgo de trazabilidad y desvío de cobros.",
+        "Consideración": "Establecer controles de conciliación y seguimiento."
+      },
+      {
+        "Modalidad": "Factoring internacional",
+        "Características": "Cesión de derechos de cobro derivados de operaciones transfronterizas.",
+        "Riesgo principal": "Riesgo país, divisa y jurídico.",
+        "Consideración": "Analizar jurisdicción, moneda y exigibilidad del crédito."
+      },
+      {
+        "Modalidad": "Factoring con anticipo",
+        "Características": "El factor anticipa un porcentaje del nominal elegible antes del vencimiento.",
+        "Riesgo principal": "Riesgo financiero del importe dispuesto.",
+        "Consideración": "Controlar porcentaje de anticipo, límites e intereses."
+      },
+      {
+        "Modalidad": "Factoring sin anticipo",
+        "Características": "Se presta el servicio de gestión de cobro sin financiación anticipada.",
+        "Riesgo principal": "Riesgo operativo y contractual.",
+        "Consideración": "No existe disposición financiera por anticipo."
+      }
+    ],
+    [
+      {
+        "Fase": "1. Alta y aprobación",
+        "Actividad": "Identificación del cedente y los deudores, análisis de solvencia y aprobación de límites.",
+        "Validaciones": "KYC, actividad empresarial, rating, límites y grupo económico."
+      },
+      {
+        "Fase": "2. Formalización",
+        "Actividad": "Firma del contrato y definición de las condiciones del factoring.",
+        "Validaciones": "Tipo de recurso, garantías, notificaciones y cuentas de cobro."
+      },
+      {
+        "Fase": "3. Remesa de facturas",
+        "Actividad": "Presentación y registro de facturas comerciales.",
+        "Validaciones": "Identificador, nominal, emisión, vencimiento, deudor y justificantes."
+      },
+      {
+        "Fase": "4. Validación",
+        "Actividad": "Revisión de las facturas para determinar su elegibilidad.",
+        "Validaciones": "Ausencia de duplicidades, disputas, exclusiones y disponibilidad de límites."
+      },
+      {
+        "Fase": "5. Anticipo y seguimiento",
+        "Actividad": "Desembolso de financiación sobre las facturas elegibles.",
+        "Validaciones": "Porcentaje de anticipo, importe dispuesto, vencimientos y aging."
+      },
+      {
+        "Fase": "6. Cobro y cierre",
+        "Actividad": "Recepción y conciliación de pagos, regularización y cierre.",
+        "Validaciones": "Cobros recibidos, incidencias, saldo pendiente y retenciones."
+      }
+    ],
+    [
+      {
+        "Riesgo": "Crédito del deudor",
+        "Descripción": "Posibilidad de que el comprador no pague al vencimiento.",
+        "Indicadores": "Rating, morosidad, deterioro financiero e impagos.",
+        "Control": "Límites por deudor o grupo y alertas de mora."
+      },
+      {
+        "Riesgo": "Crédito del cedente",
+        "Descripción": "Incapacidad del cedente para atender reclamaciones o recompras contractuales.",
+        "Indicadores": "Rating, solvencia y obligaciones de recurso.",
+        "Control": "Análisis de riesgo consolidado y revisión contractual."
+      },
+      {
+        "Riesgo": "Dilución comercial",
+        "Descripción": "Reducción del importe cobrable por abonos, descuentos, devoluciones o disputas.",
+        "Indicadores": "Tasa de dilución y frecuencia de incidencias.",
+        "Control": "Reservas, exclusiones y análisis histórico."
+      },
+      {
+        "Riesgo": "Fraude",
+        "Descripción": "Presentación de facturas falsas, ya pagadas o cedidas anteriormente.",
+        "Indicadores": "Duplicidades, inconsistencias y falta de soporte documental.",
+        "Control": "Validación documental, unicidad y confirmación selectiva."
+      },
+      {
+        "Riesgo": "Concentración",
+        "Descripción": "Exposición elevada a un deudor, grupo empresarial o sector.",
+        "Indicadores": "Concentración por deudor, grupo y top 5.",
+        "Control": "Sublímites, seguimiento de concentración y pruebas de estrés."
+      },
+      {
+        "Riesgo": "Legal y operativo",
+        "Descripción": "Deficiencias en la cesión, notificación, cobro o consistencia de datos.",
+        "Indicadores": "Errores de conciliación, documentación incompleta e incidencias.",
+        "Control": "Revisión jurídica, conciliación y controles operativos."
+      }
+    ],
+    [
+      {
+        "Indicador": "Límite de línea",
+        "Descripción": "Importe máximo autorizado de financiación para la operación.",
+        "Uso": "Control de disponibilidad."
+      },
+      {
+        "Indicador": "Sublímite por deudor",
+        "Descripción": "Importe máximo autorizado para un comprador individual.",
+        "Uso": "Control de concentración."
+      },
+      {
+        "Indicador": "Nominal vivo",
+        "Descripción": "Importe de las facturas cedidas que permanece pendiente de cobro.",
+        "Uso": "Seguimiento de cartera."
+      },
+      {
+        "Indicador": "Porcentaje de anticipo",
+        "Descripción": "Porcentaje del nominal elegible que se financia.",
+        "Uso": "Cálculo de financiación."
+      },
+      {
+        "Indicador": "Importe anticipado",
+        "Descripción": "Financiación desembolsada sobre las facturas.",
+        "Uso": "Seguimiento de exposición."
+      },
+      {
+        "Indicador": "DPD",
+        "Descripción": "Días transcurridos desde el vencimiento de una factura impagada.",
+        "Uso": "Control de morosidad."
+      },
+      {
+        "Indicador": "Tasa de dilución",
+        "Descripción": "Indicador de reducciones comerciales sobre los derechos de cobro.",
+        "Uso": "Evaluación de calidad de cartera."
+      },
+      {
+        "Indicador": "Saldo disponible",
+        "Descripción": "Capacidad de financiación restante sujeta a límites, disposiciones y elegibilidad.",
+        "Uso": "Autorización de nuevos anticipos."
+      }
+    ],
+    [
+      {
+        "Concepto": "Nominal de factura",
+        "Valor": "1.000.000 EUR",
+        "Cálculo": "Importe inicial",
+        "Descripción": "Importe de la factura elegible en el ejemplo."
+      },
+      {
+        "Concepto": "Plazo",
+        "Valor": "90 días",
+        "Cálculo": "Vencimiento pactado",
+        "Descripción": "Periodo utilizado para calcular intereses."
+      },
+      {
+        "Concepto": "Porcentaje de anticipo",
+        "Valor": "85%",
+        "Cálculo": "Porcentaje pactado",
+        "Descripción": "Porcentaje financiable del nominal."
+      },
+      {
+        "Concepto": "Anticipo bruto",
+        "Valor": "850.000 EUR",
+        "Cálculo": "1.000.000 x 85%",
+        "Descripción": "Importe financiado antes de descontar costes."
+      },
+      {
+        "Concepto": "Tipo de interés anual",
+        "Valor": "5%",
+        "Cálculo": "Interés simple, base 360",
+        "Descripción": "Tipo ilustrativo para el ejemplo."
+      },
+      {
+        "Concepto": "Intereses",
+        "Valor": "10.625 EUR",
+        "Cálculo": "850.000 x 5% x 90 / 360",
+        "Descripción": "Coste financiero del periodo."
+      },
+      {
+        "Concepto": "Comisión",
+        "Valor": "3.000 EUR",
+        "Cálculo": "1.000.000 x 0,30%",
+        "Descripción": "Comisión aplicada sobre el nominal."
+      },
+      {
+        "Concepto": "Abono neto inicial",
+        "Valor": "836.375 EUR",
+        "Cálculo": "850.000 - 10.625 - 3.000",
+        "Descripción": "Importe neto desembolsado bajo el supuesto de costes descontados al inicio."
+      },
+      {
+        "Concepto": "Importe no anticipado",
+        "Valor": "150.000 EUR",
+        "Cálculo": "1.000.000 - 850.000",
+        "Descripción": "Importe pendiente de liquidación tras el cobro, sujeto a condiciones."
+      }
+    ],
+    [
+      {
+        "Entidad": "Cedente",
+        "Campos": "id_empresa, grupo_economico, segmento, pais, rating, estado_KYC",
+        "Finalidad": "Identificación y evaluación del riesgo del cedente."
+      },
+      {
+        "Entidad": "Deudor",
+        "Campos": "id_empresa, grupo_economico, segmento, pais, rating, estado_KYC",
+        "Finalidad": "Identificación y evaluación del riesgo del comprador."
+      },
+      {
+        "Entidad": "Contrato",
+        "Campos": "id_contrato, tipo_recurso, notificado, divisa, limite_total, limite_deudor, pct_anticipo",
+        "Finalidad": "Consulta de condiciones y límites de financiación."
+      },
+      {
+        "Entidad": "Factura",
+        "Campos": "id_factura, id_deudor, nominal, fecha_emision, vencimiento, elegible, motivo_exclusion",
+        "Finalidad": "Validación de elegibilidad y seguimiento de facturas."
+      },
+      {
+        "Entidad": "Operación",
+        "Campos": "fecha_cesion, anticipo, tipo_interes, comision, saldo_vivo, fecha_cobro, DPD, incidencia",
+        "Finalidad": "Seguimiento financiero y operativo."
+      }
+    ]
+  ]
+}
