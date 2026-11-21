@@ -1,0 +1,140 @@
+{
+  "identificador": "lab1-infofactoring-mayorista",
+  "metadatos": {
+    "fecha": "2026-11-19",
+    "fuente": "sintetico",
+    "descripcion": "Informacion sobre factoring mayorista: modalidades, operativa, riesgos, limites de financiacion, condiciones y ejemplos de calculo."
+  },
+  "tablas": [
+    [
+      {
+        "Modalidad": "Con recurso",
+        "Rasgo esencial": "El cedente responde frente al factor si el deudor no paga en los supuestos pactados.",
+        "Pregunta de riesgo": "¿Qué exposición queda frente al cedente?"
+      },
+      {
+        "Modalidad": "Sin recurso",
+        "Rasgo esencial": "El factor asume el riesgo de insolvencia del deudor dentro de las condiciones de cobertura.",
+        "Pregunta de riesgo": "¿Qué impagos o disputas quedan excluidos?"
+      },
+      {
+        "Modalidad": "Notificado / no notificado",
+        "Rasgo esencial": "La comunicación al deudor cambia el circuito de pago; sin notificación puede cobrar inicialmente el cedente.",
+        "Pregunta de riesgo": "¿Cómo se controla la trazabilidad del cobro?"
+      },
+      {
+        "Modalidad": "Nacional / internacional",
+        "Rasgo esencial": "Derechos de cobro entre empresas del mismo país o con componente transfronterizo.",
+        "Pregunta de riesgo": "¿Existen riesgos país, divisa y jurídicos?"
+      },
+      {
+        "Modalidad": "Con anticipo / sin anticipo",
+        "Rasgo esencial": "El factor financia antes del vencimiento o presta servicios sin anticipar efectivo.",
+        "Pregunta de riesgo": "¿Hay disposición financiera efectiva?"
+      }
+    ],
+    [
+      {
+        "Fase": "1. Alta y aprobación",
+        "Acción / evidencia esperada": "KYC de cedente y deudores, análisis de solvencia, verificación de actividad, límites y estructura de la operación."
+      },
+      {
+        "Fase": "2. Formalización",
+        "Acción / evidencia esperada": "Contrato, alcance de la cesión, reglas de recurso, garantías, notificaciones y cuenta de cobro."
+      },
+      {
+        "Fase": "3. Remesa de facturas",
+        "Acción / evidencia esperada": "Carga de ID, nominal, fecha, vencimiento, orden de compra, deudor y evidencias de entrega/servicio."
+      },
+      {
+        "Fase": "4. Validación",
+        "Acción / evidencia esperada": "Comprobación de elegibilidad, no duplicidad, ausencia de disputas y disponibilidad de límites."
+      },
+      {
+        "Fase": "5. Anticipo / seguimiento",
+        "Acción / evidencia esperada": "Desembolso sobre base elegible; control diario de dispuesto, vencimientos, aging y excepciones."
+      },
+      {
+        "Fase": "6. Cobro / cierre",
+        "Acción / evidencia esperada": "Conciliación del pago, aplicación a facturas, regularización del anticipo, incidencias y liberación de retenciones."
+      }
+    ],
+    [
+      {
+        "Riesgo": "Crédito del deudor",
+        "Qué observar": "Deterioro financiero, impagos o rating.",
+        "Control orientativo": "Límites por deudor/grupo; alertas de mora y rating."
+      },
+      {
+        "Riesgo": "Cedente / recurso",
+        "Qué observar": "Capacidad de atender reclamaciones o recompras.",
+        "Control orientativo": "Riesgo consolidado y convenios contractuales."
+      },
+      {
+        "Riesgo": "Dilución comercial",
+        "Qué observar": "Abonos, descuentos, devoluciones o disputas que reducen el cobro.",
+        "Control orientativo": "Tasa histórica de dilución; reservas y exclusiones."
+      },
+      {
+        "Riesgo": "Fraude / elegibilidad",
+        "Qué observar": "Facturas falsas, ya pagadas o cedidas dos veces.",
+        "Control orientativo": "Validación documental, unicidad y confirmación selectiva."
+      },
+      {
+        "Riesgo": "Concentración",
+        "Qué observar": "Exposición a un solo deudor, grupo o sector.",
+        "Control orientativo": "Sub-límites; concentración top 5 y stress."
+      },
+      {
+        "Riesgo": "Legal / operativo",
+        "Qué observar": "Cesión no oponible, cobro mal dirigido o datos inconsistentes.",
+        "Control orientativo": "Revisión jurídica, notificaciones y conciliación."
+      }
+    ],
+    [
+      {
+        "Concepto": "Anticipo bruto",
+        "Cálculo": "1.000.000 € x 85 %",
+        "Resultado": "850.000 €"
+      },
+      {
+        "Concepto": "Interés del periodo",
+        "Cálculo": "850.000 € x 5 % x 90 / 360",
+        "Resultado": "10.625 €"
+      },
+      {
+        "Concepto": "Comisión",
+        "Cálculo": "1.000.000 € x 0,30 %",
+        "Resultado": "3.000 €"
+      },
+      {
+        "Concepto": "Abono neto inicial*",
+        "Cálculo": "850.000 € - 10.625 € - 3.000 €",
+        "Resultado": "836.375 €"
+      },
+      {
+        "Concepto": "Importe no anticipado",
+        "Cálculo": "1.000.000 € - 850.000 €",
+        "Resultado": "150.000 €"
+      }
+    ],
+    [
+      {
+        "Entidad": "Cedente / deudor",
+        "Campos sugeridos (ejemplos)": "id_empresa, grupo_economico, segmento, país, rating, estado_KYC"
+      },
+      {
+        "Entidad": "Contrato / línea",
+        "Campos sugeridos (ejemplos)": "id_contrato, tipo_recurso, notificado, divisa, limite_total, limite_deudor, pct_anticipo"
+      },
+      {
+        "Entidad": "Factura",
+        "Campos sugeridos (ejemplos)": "id_factura, id_deudor, nominal, fecha_emision, vencimiento, elegible, motivo_exclusion"
+      },
+      {
+        "Entidad": "Operación / cobro",
+        "Campos sugeridos (ejemplos)": "fecha_cesion, anticipo, tipo_interes, comision, saldo_vivo, fecha_cobro, DPD, incidencia"
+      }
+    ]
+  ]
+}
